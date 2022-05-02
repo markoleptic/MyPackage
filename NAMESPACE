@@ -1,0 +1,13 @@
+importFrom("grDevices", "rainbow")
+importFrom("graphics", "abline", "axis", "barplot", "curve", "hist",
+               "legend", "lines", "locator", "points", "polygon",
+               "segments", "text")
+importFrom("stats", "dchisq", "density", "dnorm", "dt", "dunif",
+               "quantile", "rnorm", "runif", "sd", "var")
+export(myboot)
+export(mycltu)
+export(mysample)
+export(myTsim)
+export(mychisim)
+export(mymaxlik)
+export(myncurve)

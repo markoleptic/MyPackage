@@ -1,0 +1,87 @@
+---
+title: "Purpose of this Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Purpose of this Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MyPackage)
+```
+
+# Introduction
+
+This package includes various functions and data that I've saved during my labs for MATH 4753.
+
+#Functions
+
+## myboot
+
+Myboot takes a sample and generates a histogram  including interval estimates and the mean.
+
+```{r}
+sam=rnorm(25,mean=25,sd=10)
+myboot(sam,iter=10000,alpha=0.05)
+```
+
+
+## mychisim
+
+```{r}
+mychisim(n1=10,iter=100,sigma1=4,mean1=10)
+```
+
+
+## mycltu
+
+This function creates a histogram of sample means including a sample and theoretical density curve.
+
+```{r}
+mycltu(n=20,iter=10000)
+```
+
+
+## mymaxlik
+
+Mymaxlik gives the maximum likelihood estimate given a set of numbers, a function, and an increment. It also outputs the index of the maximum.
+
+```{r}
+y=c(3,3,4,3,4,5,5,4)
+logbin=function(x,param) log(dbinom(x,prob=param,size=10))
+mymaxlik(lfun=logbin, x=y, param=seq(0,1, length=1000), main="Binomial, n=20")
+```
+
+
+## myncurve
+
+Myncurve displays a graph representing the area under a curve given a mean and standard deviation, up to a specific x value.
+
+```{r}
+myncurve(mu=2,sigma=3,a=3)
+```
+
+
+## mysample
+
+Mysample displays iter number of graphs of the distribution of random samples for a given n-value.
+
+```{r}
+mysample(n=10,iter=5)
+```
+
+
+## myTsim
+
+```{r}
+myTsim(n1=10,iter=100,sigma1=4,mean1=10,ymax = 0.4)
+```
+
